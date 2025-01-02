@@ -1,5 +1,28 @@
 # stock-price-tool
 
+## 1.0.1-alpha.20
+
+### Patch Changes
+
+- Updated dependencies [b726bf5]
+  - @mastra/core@0.1.27-alpha.48
+
+## 1.0.1-alpha.19
+
+### Patch Changes
+
+- Updated dependencies [f6ba259]
+  - @mastra/core@0.1.27-alpha.47
+
+## 1.0.1-alpha.18
+
+### Patch Changes
+
+- Updated dependencies [8ae2bbc]
+- Updated dependencies [0bd142c]
+- Updated dependencies [ee4de15]
+  - @mastra/core@0.1.27-alpha.46
+
 ## 1.0.1-alpha.17
 
 ### Patch Changes

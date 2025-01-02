@@ -1,5 +1,28 @@
 # bird-checker-with-nextjs
 
+## 0.1.1-alpha.27
+
+### Patch Changes
+
+- Updated dependencies [b726bf5]
+  - @mastra/core@0.1.27-alpha.48
+
+## 0.1.1-alpha.26
+
+### Patch Changes
+
+- Updated dependencies [f6ba259]
+  - @mastra/core@0.1.27-alpha.47
+
+## 0.1.1-alpha.25
+
+### Patch Changes
+
+- Updated dependencies [8ae2bbc]
+- Updated dependencies [0bd142c]
+- Updated dependencies [ee4de15]
+  - @mastra/core@0.1.27-alpha.46
+
 ## 0.1.1-alpha.24
 
 ### Patch Changes

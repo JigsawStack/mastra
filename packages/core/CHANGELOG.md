@@ -1,5 +1,25 @@
 # @mastra/core
 
+## 0.1.27-alpha.48
+
+### Patch Changes
+
+- b726bf5: Fix agent memory int.
+
+## 0.1.27-alpha.47
+
+### Patch Changes
+
+- f6ba259: simplify generate api
+
+## 0.1.27-alpha.46
+
+### Patch Changes
+
+- 8ae2bbc: Dane publishing
+- 0bd142c: Fixes learned from docs
+- ee4de15: Dane fixes
+
 ## 0.1.27-alpha.45
 
 ### Patch Changes

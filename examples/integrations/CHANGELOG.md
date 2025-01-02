@@ -1,5 +1,41 @@
 # composio
 
+## 1.0.1-alpha.17
+
+### Patch Changes
+
+- Updated dependencies [b726bf5]
+  - @mastra/core@0.1.27-alpha.48
+  - @mastra/composio@0.0.1-alpha.14
+  - @mastra/firecrawl@1.0.4-alpha.34
+
+## 1.0.1-alpha.16
+
+### Patch Changes
+
+- Updated dependencies [f6ba259]
+  - @mastra/core@0.1.27-alpha.47
+  - @mastra/composio@0.0.1-alpha.13
+  - @mastra/firecrawl@1.0.4-alpha.33
+
+## 1.0.1-alpha.15
+
+### Patch Changes
+
+- Updated dependencies [8ae2bbc]
+- Updated dependencies [0bd142c]
+- Updated dependencies [ee4de15]
+  - @mastra/firecrawl@1.0.4-alpha.32
+  - @mastra/composio@0.0.1-alpha.12
+  - @mastra/core@0.1.27-alpha.46
+
+## 1.0.1-alpha.14
+
+### Patch Changes
+
+- Updated dependencies [9897f48]
+  - @mastra/firecrawl@1.0.4-alpha.31
+
 ## 1.0.1-alpha.13
 
 ### Patch Changes

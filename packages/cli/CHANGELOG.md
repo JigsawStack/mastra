@@ -1,5 +1,57 @@
 # mastra
 
+## 0.1.57-alpha.69
+
+### Patch Changes
+
+- 32cd966: new mastra create command, publish create-mastra a way to quickly spin up mastra apps
+
+## 0.1.57-alpha.68
+
+### Patch Changes
+
+- c156b63: Add missing mastra deploy server deps
+
+## 0.1.57-alpha.67
+
+### Patch Changes
+
+- Updated dependencies [b726bf5]
+  - @mastra/core@0.1.27-alpha.48
+
+## 0.1.57-alpha.66
+
+### Patch Changes
+
+- f2c5dfa: update endpoint path
+
+## 0.1.57-alpha.65
+
+### Patch Changes
+
+- f6ba259: simplify generate api
+- Updated dependencies [f6ba259]
+  - @mastra/core@0.1.27-alpha.47
+
+## 0.1.57-alpha.64
+
+### Patch Changes
+
+- 8ae2bbc: Dane publishing
+- 0bd142c: Fixes learned from docs
+- ee4de15: Dane fixes
+- Updated dependencies [8ae2bbc]
+- Updated dependencies [0bd142c]
+- Updated dependencies [ee4de15]
+  - @mastra/core@0.1.27-alpha.46
+
+## 0.1.57-alpha.63
+
+### Patch Changes
+
+- 0091799: Add dev and deploy mastra commands to CLI references in documentation, update build successful message in dev command
+- 1dbbb49: update netlify and cloudflare server templates
+
 ## 0.1.57-alpha.62
 
 ### Patch Changes

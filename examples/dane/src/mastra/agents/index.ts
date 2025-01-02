@@ -1,5 +1,6 @@
 import { Agent } from '@mastra/core';
 
+import { config } from '../../config/index.js';
 import { browserTool, googleSearch } from '../tools/browser.js';
 import { listEvents } from '../tools/calendar.js';
 import { crawl } from '../tools/crawl.js';
@@ -7,6 +8,14 @@ import { execaTool } from '../tools/execa.js';
 import { fsTool } from '../tools/fs.js';
 import { imageTool } from '../tools/image.js';
 import { readPDF } from '../tools/pdf.js';
+import { activeDistTag, pnpmBuild, pnpmChangesetPublish, pnpmChangesetStatus } from '../tools/pnpm.js';
+
+const getBaseModelConfig = () => ({
+  provider: 'ANTHROPIC' as const,
+  toolChoice: 'auto' as const,
+  name: 'claude-3-5-sonnet-20241022',
+  apiKey: config.getAnthropicApiKey(),
+});
 
 export const daneCommitMessage = new Agent({
   name: 'DaneCommitMessage',
@@ -14,17 +23,10 @@ export const daneCommitMessage = new Agent({
     You are Dane, the ultimate GitHub operator.
     You help engineers generate commit messages.
 
-    GENERATE MESSAGES ACCORDING TO THE GIT COMMIT MESSAGE CONVENTION.
-
     GENERATE A SCOPE FOR THE COMMIT MESSAGE IF NECESSARY.
-
     FIGURE OUT THE BEST TOP LEVEL SEMANTIC MATCH TO USE AS THE SCOPE.
     `,
-  model: {
-    provider: 'ANTHROPIC',
-    toolChoice: 'auto',
-    name: 'claude-3-5-sonnet-20241022',
-  },
+  model: getBaseModelConfig(),
 });
 
 export const daneIssueLabeler = new Agent({
@@ -33,10 +35,22 @@ export const daneIssueLabeler = new Agent({
     You are Dane, the ultimate GitHub operator.
     You help engineers label their issues.
     `,
-  model: {
-    provider: 'ANTHROPIC',
-    toolChoice: 'auto',
-    name: 'claude-3-5-sonnet-20241022',
+  model: getBaseModelConfig(),
+});
+
+export const danePackagePublisher = new Agent({
+  name: 'DanePackagePublisher',
+  instructions: `
+    You are Dane, the ultimate node module publisher.
+    You help engineers publish their pnpm changesets.
+    `,
+  model: getBaseModelConfig(),
+  tools: {
+    execaTool,
+    pnpmBuild,
+    pnpmChangesetPublish,
+    pnpmChangesetStatus,
+    activeDistTag,
   },
 });
 
@@ -73,7 +87,8 @@ export const dane = new Agent({
     ## crawl
     Use this when the user asks you to crawl. CRAWL is the signal to use this tool.
     Makes you a powerful agent capable of crawling a site and extracting markdown metadata.
-    The data will be stored in a database. Confirm that it is sucessful.
+    The data will be stored in a database if it is not already there. Confirm that it is sucessful.
+    The crawled data will be returned in the response on the 'crawlData' field.
 
     ## imageTool
     Makes you a powerful agent capable of generating images and saving them to disk. Pass the directory and an image prompt.
@@ -83,11 +98,7 @@ export const dane = new Agent({
     * Don't reference tools when you communicate with the user. Do not mention what tools you are using.
     * Tell the user what you are doing.
     `,
-  model: {
-    provider: 'ANTHROPIC',
-    toolChoice: 'auto',
-    name: 'claude-3-5-sonnet-20241022',
-  },
+  model: getBaseModelConfig(),
   tools: {
     fsTool,
     execaTool,
@@ -97,7 +108,5 @@ export const dane = new Agent({
     listEvents,
     crawl,
     imageTool,
-    // TODO I SHOULD BE ABLE TO PASS A WORKFLOW EXECUTE HERE
-    // browserAgentRelay,
   },
 });
