@@ -4,7 +4,6 @@ export const sources: Source[] = [
   {
     serverUrl: 'https://api.jigsawstack.com/v1',
     name: 'jigsawstack',
-    logoDomain: 'jigsawstack.com',
     authType: 'API_KEY',
     apiKeys: ['API_KEY'],
     idKey: 'id',

@@ -116,7 +116,7 @@ async function getOpenApiSpecFromText({
   const trimmedSpec = omit(content, ['info', 'tags', 'x-maturity']);
 
   await execa('npx', [
-    '@hey-api/openapi-ts',
+    '@hey-api/openapi-ts@0.53.5',
     '-i',
     openapiSpec,
     '-o',
